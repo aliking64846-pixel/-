@@ -1,0 +1,98 @@
+/* ===== تصميم عام للصفحات ===== */
+body{
+    margin:0;
+    font-family:Segoe UI, Tahoma, Arial;
+    background:#f5f7fb;
+}
+
+/* ===== Sidebar ===== */
+.sidebar{
+    position:fixed;
+    right:0;
+    top:0;
+    width:240px;
+    height:100vh;
+    background:#243447;
+    color:#fff;
+    padding:20px;
+}
+.sidebar h2{
+    margin-bottom:30px;
+}
+.sidebar a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:12px;
+    margin-bottom:8px;
+    border-radius:8px;
+}
+.sidebar a.active,
+.sidebar a:hover{
+    background:#3b82f6;
+}
+
+/* ===== Main content ===== */
+.main{
+    margin-right:260px;
+    padding:30px;
+}
+
+/* ===== بطاقات Dashboard ===== */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.card{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+.big{
+    font-size:38px;
+    font-weight:bold;
+}
+
+/* ===== جدول Inventory ===== */
+table{
+    width:100%;
+    background:#fff;
+    border-radius:15px;
+    border-collapse:collapse;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+th, td{
+    padding:14px;
+    text-align:center;
+}
+th{
+    background:#f1f5f9;
+}
+.low{
+    color:#dc2626;
+    font-weight:bold;
+}
+.ok{
+    color:#16a34a;
+    font-weight:bold;
+}
+
+/* ===== رسم بياني ===== */
+#inventoryChart{
+    width:100%;
+    max-width:700px;
+    height:400px;
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+    margin-top:20px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width:768px){
+    .main{margin-right:0;padding:15px;}
+    .sidebar{width:200px;}
+}
