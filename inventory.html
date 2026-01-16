@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>المخزون - Inventory</title>
+
+<style>
+body{
+    margin:0;
+    font-family: "Segoe UI", Tahoma, Arial;
+    background:#f5f7fb;
+}
+
+/* sidebar */
+.sidebar{
+    position:fixed;
+    right:0;
+    top:0;
+    width:240px;
+    height:100vh;
+    background:#243447;
+    color:#fff;
+    padding:20px;
+}
+
+.sidebar h2{
+    margin-bottom:30px;
+    font-size:20px;
+}
+
+.sidebar a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:12px;
+    margin-bottom:8px;
+    border-radius:8px;
+}
+
+.sidebar a.active,
+.sidebar a:hover{
+    background:#3b82f6;
+}
+
+/* main */
+.main{
+    margin-right:260px;
+    padding:30px;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.table-box{
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th, td{
+    padding:12px;
+    text-align:center;
+}
+
+th{
+    background:#f1f5f9;
+}
+
+tr:not(:last-child){
+    border-bottom:1px solid #eee;
+}
+
+.low{
+    color:#dc2626;
+    font-weight:bold;
+}
+
+.ok{
+    color:#16a34a;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>شعار الشركة</h2>
+    <a href="index.html">Dashboard</a>
+    <a href="inventory.html" class="active">Inventory</a>
+    <a href="#">QR / RFID</a>
+    <a href="#">AI Suggestions</a>
+    <a href="#">Environment</a>
+    <a href="#">Reports</a>
+    <a href="#">Settings</a>
+</div>
+
+<div class="main">
+    <div class="topbar">
+        <h2>إدارة المخزون</h2>
+        <button>إضافة مادة</button>
+    </div>
+
+    <div class="table-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>اسم المادة</th>
+                    <th>الكمية</th>
+                    <th>الحالة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>رز</td>
+                    <td>120</td>
+                    <td class="ok">جيد</td>
+                </tr>
+                <tr>
+                    <td>سكر</td>
+                    <td>20</td>
+                    <td class="low">منخفض</td>
+                </tr>
+                <tr>
+                    <td>زيت</td>
+                    <td>8</td>
+                    <td class="low">قارب على النفاد</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
