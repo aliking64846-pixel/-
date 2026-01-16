@@ -3,9 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Inventory</title>
-<link rel="stylesheet" href="style.css">
+<style>
+/* ===== CSS كامل هنا ===== */
+body{
+    margin:0;
+    font-family:Segoe UI, Tahoma, Arial;
+    background:#f5f7fb;
+}
+.sidebar{
+    position:fixed;
+    right:0;
+    top:0;
+    width:240px;
+    height:100vh;
+    background:#243447;
+    color:#fff;
+    padding:20px;
+}
+.sidebar h2{margin-bottom:30px;}
+.sidebar a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:12px;
+    margin-bottom:8px;
+    border-radius:8px;
+}
+.sidebar a.active,
+.sidebar a:hover{background:#3b82f6;}
+.main{margin-right:260px;padding:30px;}
+table{width:100%;background:#fff;border-radius:15px;border-collapse:collapse;box-shadow:0 10px 20px rgba(0,0,0,.08);}
+th, td{padding:14px;text-align:center;}
+th{background:#f1f5f9;}
+.low{color:#dc2626;font-weight:bold;}
+.ok{color:#16a34a;font-weight:bold;}
+#inventoryChart{width:100%;max-width:700px;height:400px;background:#fff;border-radius:15px;padding:20px;box-shadow:0 10px 20px rgba(0,0,0,.08);margin-top:20px;}
+@media (max-width:768px){.main{margin-right:0;padding:15px;}.sidebar{width:200px;}}
+</style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="main.js"></script>
+<script>
+// ===== JS كامل هنا =====
+window.addEventListener('DOMContentLoaded', ()=>{
+  const labels = Array.from({length:30}, (_,i)=>`يوم ${i+1}`);
+  const data = {labels:labels,datasets:[{label:'كمية المواد',backgroundColor:'#3b82f6',borderColor:'#2563eb',data:Array.from({length:30},()=>Math.floor(Math.random()*150))}]};
+  const config={type:'line',data:data,options:{responsive:true,plugins:{legend:{display:false}}}};
+  const ctx = document.getElementById('inventoryChart');
+  new Chart(ctx, config);
+});
+</script>
 </head>
 <body>
 
@@ -25,7 +70,8 @@
     <tr><td>زيت</td><td>8</td><td class="low">قارب على النفاد</td></tr>
   </table>
 
-  <div id="inventoryChart"></div>
+  <canvas id="inventoryChart"></canvas>
 </div>
+
 </body>
 </html>
